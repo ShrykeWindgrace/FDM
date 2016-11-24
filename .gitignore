@@ -178,3 +178,12 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# vim/gvim
+*.swp
+
+# Sublime Text project files
+*.sublime*
+
+# PDF files
+*.pdf
