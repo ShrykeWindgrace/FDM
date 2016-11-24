@@ -1,0 +1,75 @@
+Consider the problem
+\[
+    A_i=A_i^T\in M_d(\mbo), i=1,\dots,k
+\]
+such that the family $\{A_i\}_{i\le k}$ is linearly independent.
+
+Take now   a linear combination
+\[
+    Q = \sum_{i=1}^k \alpha_i A_i>0.
+\]
+We know only the test values (moments of some sort) 
+\[
+    \mu_i = \frac{A_i:Q^{-1}}{\sqrt{\det Q}}.
+\]
+We have two questions:
+\begin{itemize}
+    \item what is the image of the map $\vec \alpha\mapsto \vec \mu$?
+    \item is the map $\vec \alpha\mapsto \vec \mu$ injective?
+\end{itemize}
+It is quite easy to answer these question when, for example, for $d=2$ and $k=1$ (and can be even extended to the case $\det Q\ne 0$).
+
+Indeed, in this case we have
+\[
+    Q= \alpha A, \quad Q^{-1} = \frac{1}{\alpha}A^{-1},\quad \det Q = \alpha^2\det A, \quad A:Q^{-1}=2,
+\]
+so
+\[
+    \mu = \frac{A:Q^{-1}}{\sqrt{\det Q}}=\frac{2}{\alpha\sqrt{\alpha^2\det A }}.
+\]
+Note that necessarily $\det A>0$ (the matrix $A$ is either positive definite or negative definite), therefore we can say that
+\[
+    \alpha |\alpha| =  \frac{2}{\mu\sqrt{\det A}},
+\]
+and
+\[
+    \alpha   = \sqrt{\frac{2}{|\mu|\sqrt{\det A}}}\sgn(\mu).
+\]
+The injectivity holds, and, if we know $A$, we can find the image. If $A>0$, then necessarily $\alpha>0$ and $\mu\in (0,+\infty)$.
+
+
+\textbf{Case $d=2$, $k=2$}
+
+We will take two matrices,
+\[
+    A_1=\begin{pmatrix}
+        a_1&b_1\\b_1&c_1
+    \end{pmatrix},\quad
+    A_2=\begin{pmatrix}
+        a_2&b_2\\b_2&c_2
+    \end{pmatrix},
+\] 
+it will give us
+\[Q=\alpha_1 A_1+\alpha_2 A_2,\]
+\[\det Q = (\alpha_1 a_1+\alpha_2 a_2)(\alpha_1 c_1+\alpha_2 c_2)-(\alpha_1 b_1+\alpha_2 b_2)^2\]
+\[  =  \alpha_1^2 a_1  c_1+\alpha_1\alpha_2 a_2 c_1+\alpha_1 \alpha_2 a_1 c_2+\alpha_2^2 a_2 c_2  - (\alpha_1 b_1)^2  -2\alpha_1\alpha_2 b_2 b_1 - (\alpha_2 b_2)^2 \]
+\[
+    =\alpha_1^2\det A_1 +2 \alpha_1 \alpha_2 A_1:co(A_2) + \alpha_2^2\det A_2
+\]
+Also
+\[
+    Q^{-1}=\frac{1}{\det Q}
+    \begin{pmatrix}
+        \alpha_1 c_1+\alpha_2 c_2&-(\alpha_1 b_1+\alpha_2 b_2)\\
+        -(\alpha_1 b_1+\alpha_2 b_2)&\alpha_1 a_1+\alpha_2 a_2
+    \end{pmatrix}
+    =
+    \frac{1}{\det Q}\left( \alpha_1 co(A_1)+ \alpha_2 co(A_2)\right)
+\]
+Thus
+\[
+    \mu_1 = \frac{A_1:Q^{-1}}{\sqrt{\det Q}}=\frac{1}{(\det Q)^{3/2}}\left( 2\alpha_1 \det A_1+ \alpha_2 A_1:co(A_2)\right)
+\]
+\[
+    \mu_2 =\frac{A_2:Q^{-1}}{\sqrt{\det Q}}=\frac{1}{(\det Q)^{3/2}}\left(\alpha_1 A_2:co(A_1) + 2\alpha_2 \det A_2  \right)
+\]

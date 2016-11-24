@@ -1,0 +1,799 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amsfonts}
+
+\input{macro.tex}
+\begin{document}
+
+\[
+	q_0(x,v) = a|x|^2 + c|v|^2 - 2 b x\cdot v - 2Bx\cdot v,
+\]
+\[
+	q_1(x,v) = |x|^2 + |v|^2 - 2b_1 x\cdot v - 2B_1x\cdot v,
+\]
+\[
+	q_1(-x,v)=q_1(x,-v)\ne q_1(x,v)=q_1(-x,-v),
+\]
+\[
+	a>0,\quad c>0,\quad b\in\mbo,\quad B=-B^T,
+\]
+\[
+	b_1 =\frac{b}{\sqrt{ac}}, \quad  B_1=\frac{1}{\sqrt{ac}}B,
+\]
+\[
+	Q=(ac-b^2)I+B^2,\quad Q=Q^*>0,	
+\]
+\[
+	q(t,x,v) = q_0(x-tv-(x_0-tv_0),v-v_0),
+\]
+\[
+	F(t,x,v)=\frac{1}{1+\exp\left(\mu+\frac{1}{2}q(t,x,v)\right)}
+\]
+\[
+	=\frac{1}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}
+\]
+
+\[
+	M_{0} = \int_{\rdrd}^{}M(t,x,v)\dx\dv
+\]
+
+\[
+	= \int_{\rdrd}^{}\frac{\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}.
+\]
+\[
+	=\int_{\rdrd}^{}\frac{\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}.
+\]
+
+\[
+	=(ac)^{3/2}\int_{\rdrd}^{}\frac{\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_1(x,v)\right)}.
+\]
+\[
+	m_0 = \int_{\rdrd}^{}\frac{\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_1(x,v)\right)}.
+\]
+\[
+	M_0 = (ac)^{3/2}m_0.
+\]
+
+\[
+	M_{10} = \int_{\rdrd}^{}F(t,x,v)x\dx\dv
+\]
+\[
+	= \int_{\rdrd}^{}\frac{x\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}.
+\]
+\[
+	=\int_{\rdrd}^{}\frac{(x+x_0+tv)\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{x_0\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=(ac)^{3/2}m_0x_0
+\]
+\[
+	M_{01} = \int_{\rdrd}^{}F(t,x,v)v\dx\dv= (ac)^{3/2}m_0v_0.
+\]
+\[
+	M_{20} = \int_{\rdrd}^{}F(t,x,v)|x|^2\dx\dv
+%
+\]
+\[
+	= \int_{\rdrd}^{}\frac{|x|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}.
+\]
+\[
+	=\int_{\rdrd}^{}\frac{|x+x_0+tv|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{|x|^2+|x_0|^2+|tv|^2+ 2tx\cdot v\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=a^{5/3}c^{3/2}m_{20}+a^{3/2}c^{5/2}t^2m_{02}+(ac)^{3/2}m_{0}|x_0|^2 +2 a^2c^2tm_{1\cdot1},
+\]
+
+\[
+	m_{20} = \int_{\rdrd}^{}\frac{|x|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	m_{02} = \int_{\rdrd}^{}\frac{|v|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	m_{1\cdot1} = \int_{\rdrd}^{}\frac{x\cdot v\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	M_{1\cdot 1}= \int_{\rdrd}^{}F(t,x,v)x\cdot v\dx\dv 
+\]
+\[
+	=\int_{\rdrd}^{}\frac{x\cdot v\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{x\cdot (v+v_0)\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-x_0,v)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{(x+x_0+tv)\cdot (v+v_0)\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=a^2c^2m_{1\cdot 1}+M_0 x_0\cdot v_0 + t a^{3/2}c^{5/2}m_{02}.
+\]
+\[
+	M_{1\times 1} =\int_{\rdrd}^{}F(t,x,v)x\times v\dx\dv 
+\]
+\[
+	=\int_{\rdrd}^{}\frac{x\times v\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{x\times (v+v_0)\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-x_0,v)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{(x+x_0+tv)\times (v+v_0)\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=a^2c^2m_{1\times 1}+M_0 x_0\times v_0.
+\]
+\[
+	M_{02}=\int_{\rdrd}^{}F(t,x,v)|v|^2\dx\dv
+\]
+\[
+	=\int_{\rdrd}^{}\frac{|v|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-(x_0-tv_0),v-v_0)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{|v+v_0|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x-tv-x_0,v)\right)}
+\]
+\[
+	=\int_{\rdrd}^{}\frac{|v+v_0|^2\dx\dv}{1+\exp\left(\mu+\frac{1}{2}q_0(x,v)\right)}
+\]
+\[
+	=M_0|v_0|^2 + a^{3/2}c^{5/2}m_{02}	
+\]
+\begin{align}
+	M_0&=& (ac)^{3/2}m_0\\
+	M_{10}&=& (ac)^{3/2}m_0x_0\\
+	M_{01}&=& (ac)^{3/2}m_0v_0\\
+	M_{20}&=& a^{5/3}c^{3/2}m_{20}+a^{3/2}c^{5/2}t^2m_{02}+(ac)^{3/2}m_{0}|x_0|^2+ 2a^2c^2tm_{1\cdot1}\\
+	M_{02}&=& (ac)^{3/2}m_0|v_0|^2 + a^{3/2}c^{5/2}m_{02}\\
+	M_{1\times 1}&=& a^2c^2m_{1\times 1}+(ac)^{3/2}m_0 x_0\times v_0\\
+	M_{1\cdot 1}&=& a^2c^2m_{1\cdot 1}+M_0 x_0\cdot v_0 + t a^{3/2}c^{5/2}m_{02}
+\end{align}
+
+Since the first three lines give us $x_0$ and $v_0$ in an evident manner, we can reduce our system to
+\begin{align}
+	M'_0&=& (ac)^{3/2}m_0\\
+%	M'_{10}&=& (ac)^{3/2}m_0x_0\\
+%	M'_{01}&=& (ac)^{3/2}m_0v_0\\
+	M'_{20}-2tM'_{1\times 1}+t^2M'_{02}&=& a^{5/3}c^{3/2}m_{20}\\
+	M'_{02}&=& a^{3/2}c^{5/2}m_{02}\\
+	M'_{1\times 1}&=& a^2c^2m_{1\times 1}\\
+	M'_{1\cdot 1}&=& a^2c^2m_{1\cdot 1}
+\end{align}
+
+\textbf{On bilinear form coefficients in the case $d=1$}
+
+Suppose we have the map
+\[
+	(a,b)\to \left( \int_{\mbo}^{}e^{b-a|x|^2}\dx,\, \int_{\mbo}^{}|x|^2 e^{b-a|x|^2}\dx\right)
+\]
+for $a>0$, $b\in\mbo$. We will find its image and show that this map is injective.
+
+Indeed, we can always write
+\[
+	\mu_0=\int_{\mbo}^{}e^{b-\frac{a}{2}|x|^2}\dx = e^b \sqrt{2\pi}a^{-1/2},
+\]
+\[
+	\mu_2=\int_{\mbo}^{}|x|^2e^{b-\frac{a}{2}|x|^2}\dx = e^b \int_{\mbo}\frac{1}{a^{3/2}}|\sqrt{a}x|^2e^{-\frac{1}{2}|\sqrt{a}x|^2}\mathrm d (\sqrt{a}x) = e^b \sqrt{2\pi}a^{-3/2},
+\]
+which leads to
+\[
+	\mu_0/\mu_2 = a,\quad \mu_0^3/\mu_2=2\pi e^{2b},
+\]
+which implies the invertibility of our map.
+
+The image of our map is essentially described by the first relation $\mu_2=\mu_0/a$; we know that the moment $\mu_0$ takes all values in $(0,+\infty)$ for a fixed parameter $a$ and the parameter $b$ varying in $\mbo$. Therefore, thanks to a strictly increasing behavior of $\mu_0$ with respect to $b$, the moment $\mu_2$ also takes all possible values in $(0,+\infty)$.
+
+To summarize, we have the map
+\[
+	(0,+\infty)\times \mbo \to (0,+\infty)\times(0,+\infty),\quad (a,b)\mapsto (\mu_0,\mu_2) 
+\]
+with
+\[
+	\mu_0 = e^b \sqrt{2\pi}a^{-1/2},\quad\mu_2 = e^b \sqrt{2\pi}a^{-3/2},\quad a = \frac{\mu_0}{\mu_2},\quad b = \frac{1}{2} \ln\left( \frac{\mu_0^3}{\mu_2} \right).
+\]
+
+
+\textbf{On bilinear form coefficients in the case $d=2$}.
+Now we consider the bilinear positive definite form in the two-dimensional case.
+
+Let $A\in M_2(\mbo)$ be a positive definite matrix and $b\in\mbo$. We define the map
+\[
+	(A,b)\to\left( \int_{\mtt}^{}e^{b-\frac{1}{2}(Ax,x)}\dx, \int_{\mtt}^{}x_1^2 e^{b-\frac{1}{2}(Ax,x)}\dx,\int_{\mtt}^{}x_2^2e^{b-\frac{1}{2}(Ax,x)}\dx,\int_{\mtt}^{}x_1x_2e^{b-\frac{1}{2}(Ax,x)}\dx \right)
+\]
+The set of positive definite matrices is an open cone; in this case we can express algebraically the condition that the matrix $A$ is symmetric positive definite ($\tr  A>0$, $\det A>0$, $A=A^T$). However, this condition can not be easily generalised to higher dimensions.
+
+We are capable of writing some of these integrals in terms of invariants of this matrix, since the integral $\mu_0$ can be explicitly written as
+\[
+	\mu_0 = e^{b}\frac{2\pi}{\sqrt{\det A}}, 
+\]
+and after an orthogonal change of variables the sum becomes
+\[
+	\mu_{20}+\mu_{02} = e^{b}\int_{\mtt}^{}(y_1^2+y_2^2)e^{-\frac{\lambda_1}{2}y_2^2-\frac{\lambda_2}{2}y_2^2}\dy
+\]
+with $\lambda_i$ being the eigenvalues of the matrix $A$. Thus, we can write
+\[
+	\mu_{20}+\mu_{02} = e^b\left( \frac{2\pi}{\sqrt{\lambda_1\lambda_2^3}}+\frac{2\pi}{\sqrt{\lambda_1^3\lambda_2}} \right) = 2\pi e^b \frac{\lambda_1+\lambda_2}{\sqrt{\lambda_1^3\lambda_2^3}} = 2\pi e^b \frac{\tr A}{(\det A)^{3/2}}. 
+\]
+
+Atm I do not see an efficient way to express the remaining integrals in terms of invariants. However, we might try to do that in terms of the coefficients of the matrix $A$ after a \textit{non-orthogonal} change of variables.
+
+For example, if we make a change of variables $x_1\to x_1+ \frac{a_{12}}{a_{11}}x_2$, then (\textbf{check it!}) we obtain
+\[
+	\mu_{02} = \frac{2\pi e^b a_{11}}{(\det A)^{3/2}}.
+\]
+A similar change of variables yields
+\[
+	\mu_{20} = \frac{2\pi e^b a_{22}}{(\det A)^{3/2}}
+\]
+Finally, upon the same type of change of variables we can arrive to
+\[
+	\mu_{11}=\int_{\mtt}^{}x_1x_2e^{b-\frac{1}{2}(Ax,x)}\dx=e^b\int_{\mtt}^{}\left(x_1- \frac{a_{12}}{a_{11}}x_2\right)x_2 e^{-\frac{1}{2}(a_{11}x_1^2+(a_{22}-a_{12}^2/a_{11})x_2^2)}\dx
+\]
+\[
+	=-\frac{a_{12}}{a_{11}}e^b\int_{\mtt}^{} x_2^2 e^{-\frac{1}{2}(a_{11}x_1^2+(a_{22}-a_{12}^2/a_{11})x_2^2)}\dx=-\frac{a_{12}}{a_{11}}e^b\frac{2\pi}{\sqrt{a_{11}}(a_{22}-a_{12}^2/a_{11})^{3/2}}
+%
+\]
+\[
+	=\frac{2\pi e^b a_{12}}{(\det A)^{3/2}}.
+\]
+Thus, this map becomes
+\[
+	(b,a_{11},a_{12},a_{22})\to\left( e^{b}\frac{2\pi}{\sqrt{\det A}}, \frac{2\pi e^b a_{11}}{(\det A)^{3/2}}, \frac{2\pi e^b a_{12}}{(\det A)^{3/2}},\frac{2\pi e^b a_{22}}{(\det A)^{3/2}} \right).
+\]
+Hence we can say that
+\[
+	\frac{\mu_0^2}{\mu_{20}\mu_{02}-\mu_{11}^2} = \det A,
+\]
+which immediately gives us $b$ and all coefficients $a_{ij}$. It is important to notice that the following conditions must hold:
+\[
+	\mu_0>0,\quad \mu_{02}>0,\quad \mu_{20}>0,\quad \mu_{20}\mu_{02}-\mu_{11}^2>0,
+\]
+which can be seen as the condition that the matrix \[
+	\begin{pmatrix}
+		\mu_{20}&\mu_{11}\\
+		\mu_{11}&\mu_{02}
+	\end{pmatrix}>0
+\]
+is symmetric positive definite (together with $\mu_0>0$, of course).
+
+We can write the explicit formulas for the inverse map (even though we don't want to).
+
+
+\textbf{Adapt these results for FD case}
+
+The unidimensional case will require some polylogarithms, the bidimensional - no idea.
+
+The unidimensional case stops at the requirement to have the strict convexity of the function $\mathcal G_{3/2}$, which we don't have (recall that this was shown only for $p\ge 2$ in our article).
+
+\textbf{Remark}
+
+Note that the desired case~--- with a very specific bilinear positive form and a selection of moments~--- does not satisfy the full conditions. Previously we considered, esentially, the integral of $xx^T$ weighted by our exponential. Here we don't have such a luxury.
+
+\textbf{Limited 1D case}
+Consider the map
+\[
+	T:(a,b)\mapsto (T_0,T_2),
+\]
+\[
+	T_0 = \int_{\mbo}^{}\frac{\dx}{1+\exp(a+bx^2)},\quad T_2=\int_{\mbo}^{}\frac{x^2\dx}{1+\exp(a+bx^2)}.
+\]
+The gradient of this map writes
+\[
+	-\begin{pmatrix}
+		\int_{\mbo}^{}\dy(x)&\int_{\mbo}^{}x^2\dy(x)\\\int_{\mbo}^{}x^2\dy(x)&\int_{\mbo}^{}x^4\dy(x)
+	\end{pmatrix}
+%
+\]
+with the measure $\dy(x)=\frac{\exp(a+bx^2)\dx}{(1+\exp(a+bx^2))^2}$. The Cauchy-Bunyakovskiy-Schwarz inequality assures that $|\det(\nabla T)|\ne0$, hence the map $T$ is locally invertible.
+
+Suppose that have parameters $a_1>a_2$ and $b_1<b_2$ such that
+$T_0(a_1,b_1)=T_0(a_2,b_2)$. Can we show that in this case $T_2(a_1,b_1)\ne T_2(a_2,b_2)$?
+
+We have a critical point $x_*$ given by
+\[
+	x_*=\sqrt{\frac{a_1-a_2}{b_2-b_1}}.
+\]
+Consider the function \[
+	f:\mbo\to\mbo,\quad f(x) = \frac{1}{1+\exp(a_1+b_1x^2)}-\frac{1}{1+\exp(a_2+b_2x^2)}.
+%
+\]
+This function has the following properties:
+\begin{itemize}
+	\item $f(x)=0\iff |x|=x_*$;
+	\item $f(x)>0\iff |x|>x_*$;
+	\item $f(x)<0\iff |x|<x_*$;
+	\item this function is $C^{\infty}$;
+	\item $\lim_{|x|\to +\infty}f(x)=0$;
+	\item $\int_{\mbo}^{}f(x)\dx=0$ by our choice of parameters $a_i$ and $b_i$.
+\end{itemize}
+
+Therefore, we can write an estimate
+\[
+	\int_{\mbo}^{}x^2f(x)\dx = \int_{|x|<x_*}^{}x^2f(x)\dx + \int_{|x|>x_*}^{}x^2f(x)\dx
+\]\textbf{TBC\dots}
+
+\textbf{Lemma analysis-style}
+
+\begin{lemma}
+	Let $d\in\mathbb N_*$. Let also $f$ and $g$ be positive, continuous, and strictly increasing functions defined on $[0,+\infty)$ such that the integrals 
+		\[
+			T_0 = \int_{\mbrd}^{}\frac{\dx}{1+\exp(a+bg(|x|))},\quad T_f = \int_{\mbrd}^{}\frac{f(|x|)\dx}{1+\exp(a+bg(|x|))}
+		\]
+		exist for all $a\in\mbo$ and $b>0$.
+
+		Then the map $(a,b)\mapsto (T_0,T_f)$ is injective.
+	\label{le:basic}
+\end{lemma}
+\begin{proof}
+	Suppose that $T_0(a_1,b_1)=T_0(a_2,b_2)$ and $(a_1,b_1)\ne (a_2,b_2)$ with $a_1\le a_2$.
+	If $a_1=a_2$, then for monotonicity reasons $b_1=b_2$, which leads to a contradiction.
+	Suppose now that $a_1<a_2$.
+	For the same reasons $b_1>b_2$, and we can therefore consider the function
+	\[
+		h(x) = \frac{1}{1+\exp(a_2+b_2g(|x|))}-\frac{1}{1+\exp(a_1+b_1g(|x|))}.
+	\]
+	Define also $r_*>0$ as a solution of the equation $a_2+b_2g(r)=a_2+b_2g(r)$. This equation has a unique (since $g$ is strictly monotone) solution, otherwise $f$ is sign-constant, which  contradicts our choice of $a_i$ and $b_i$.
+	The function $f$ has the following poperties:
+	\begin{itemize}
+%		\item
+	\item $h(x)=0\iff |x|=r_*$;
+	\item $h(x)>0\iff |x|>r_*$;
+	\item $h(x)<0\iff |x|<r_*$;
+	\item this function is $C^{\infty}$;
+	\item $\lim_{|x|\to +\infty}h(x)=0$;
+	\item $\int_{\mbrd}^{}h(x)\dx=T_0(a_2,b_2)-T_0(a_1,b_1)=0$ by our choice of parameters $a_i$ and $b_i$.
+	\end{itemize}
+	Now we can write the following estimation %(the constant $c_d$ is a measure of unit sphere in $\mrd$):
+	\[
+		T_f(a_2,b_2)-T_f(a_1,b_1)=\int_{\mbrd}^{}f(|x|)h(x)\dx=\int_{|x|<r_*}^{}f(|x|)h(x)\dx+\int_{|x|\ge r_*}^{}f(|x|)h(x)\dx
+	\]
+	\[
+		> \int_{|x|<r_*}^{}f(r_*)h(x)\dx+\int_{|x|\ge r_*}^{}f(r_*)h(x)\dx=f(r_*)\int_{\mbrd}^{}h(x)\dx=0.
+	\]
+	Note that these inequalities use the strict monotonicity of $f$ and the sign change of $h$ at $|x|=r_*$.
+
+	We can therefore conclude that for this choice of $a_i$ and $b_i$ the corresponding values of $T_f$ are different, and the map $(a,b)\mapsto (T_0,T_f)$ is indeed injective.
+
+\end{proof}
+\begin{corollary}
+	As a direct corollary of the lemma \ref{le:basic} one can establish the injectiveness of the map 
+	$(\mu,\theta)\mapsto (\rho, \mathcal E)$ which was proven by a by far more complex technique in one of our previous works. That technique works only for $d\ge2$, the lemma \ref{le:basic} works for $d\ge1$. The functions are $f(|x|)=g(|x|)=|x|^2$.
+\end{corollary}
+
+\begin{lemma}
+	Let $a\in\mbo$, $b>0$, and the functions $f_i:\mbo\to(0,+\infty)$ are strictly positive and strictly increasing. Suppose also that $0<p<q$ and the map
+	\[
+		M:(a,b)\to (b^pf_1(a),b^q f_2(a))
+	\]
+	is injective on $\mbo\times(0,+\infty)$.
+
+	Then the function $a\to \frac{f_1^q(a)}{f_2^p(a)}$ is injective on $\mbo$.
+	\label{le:inject}
+\end{lemma}
+\begin{proof}
+	Suppose that the function $a\to \frac{f_1^q(a)}{f_2^p(a)}$ is not injective. Then there exist $a_1\ne a_2$ such that
+	\[
+		\frac{f_1^q(a_1)}{f_2^p(a_1)}=\frac{f_1^q(a_2)}{f_2^p(a_2)}
+	\]
+	or
+	\[
+		\frac{f_1^q(a_1)}{f_1^q(a_2)}=\frac{f_2^p(a_1)}{f_2^p(a_2)}.
+	\]
+	Now chose $0<b_*\ne1$ such that 
+	\[
+		f_1^q(a_1) = b_*^{pq}f_1^{q}(a_2).
+	\]
+	This choice, together with the previous equation, implies that
+	\[
+		f_2^p(a_1) = b_*^{pq}f_2^p(a_2),
+	\]
+	and, therefore, that the map $M$ is not injective, because $M(a_1,1)=M(a_2,b_*)$ and $b_*\ne 1$.
+
+
+\end{proof}
+
+One of the questions is whether this injectivity implies the mentioned convexity of those functions $\mathcal G_p$.
+
+\begin{corollary}
+	The lemma \ref{le:inject} implies strict convexity of the function $\mathcal G_p(a)$ for $p\ge 1$ with respect to $a\in \mbo$.
+
+	Indeed, this convexity is equivalent to strict increase of the function (up to a multiplicative constant) 
+	\[
+		a\to\frac{\F_{p-1}(a)}{(\F_{p}(a))^{\frac{p-1}{p}}}.
+	\]
+	This strict increasing is equivalent to a strict increasing of a function
+\[
+	a\to\frac{\F^{p}_{p-1}(a)}{\F_{p}^{p-1}(a)}.
+	\]
+	In its turn, this strict increasing is a consequence of injectivity of the latter function and its continuity.
+	The continuity is granted by the nature of polylogarithmic integrals, and the injectivity can be obtained via lemma \ref{le:inject} applied to functions
+	\[
+		f_1(a)=\F_{p-1}(a),\quad f_2(a)\F_{p},\quad q=p-1.
+	\]
+	All conditions of the lemma \ref{le:inject} are readily satisfied except for the injectivity of the map \[
+		(a,b)\to(b^p\F_{p-1}(a),b^{p-1}\F_{p}(a)
+	\]<++>
+\end{corollary}<++>
+
+
+\textbf{Let us try to generalise this result to $2$D}
+We will consider the $2$D-case.We can transform them into
+\[
+	1,\quad  y_1^2+y_2^2,\quad  (y_1^2-y_2^2)\cos2\theta-2y_1y_2\sin 2\theta, \quad (y_1^2-y_2^2)\sin2\theta+2y_1y_2\cos2\theta
+\]
+Goal~--- find $a$, $\sigma_i$, and $\theta$, hope that they are unique.
+
+Judging by the last two identities, we will obtain the system of equations
+\[
+	T_{(2-2)}\cos2\theta-T_{11}\sin2\theta=T_3,\quad T_{(2-2)}\sin2\theta+T_{11}\cos2\theta=T_4,
+\]
+which seems to have a unique solution in $[0,2\pi)$. However, we do not have the values of $T_{(2-2)}$ and $T_{11}$, so this point has, atm, no practical value.
+
+
+
+\textbf{New approach to $2$D.}
+
+We will consider the simplified version:
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}
+	\end{pmatrix}
+	=
+	\int_{\mbo\times\mbo}^{}\begin{pmatrix}
+		1\\
+		x_1^2\\
+		x_2^2
+	\end{pmatrix}
+	\frac{\dx_1\dx_2}{1+\exp(-a+b_1x_1^2+b_2x_2^2)}.
+\]
+We will scale this vector to factor out $b_i$,, then apply the polar coordinates to obtain the invertibility result.
+We write
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}
+	\end{pmatrix}
+	=
+	\int_{\mbo\times\mbo}^{}\begin{pmatrix}
+		\frac{1}{\sqrt{b_1b_2}}\\
+		\frac{1}{b_1\sqrt{b_1b_2}}u_1^2\\
+		\frac{1}{b_2\sqrt{b_1b_2}}u_2^2
+	\end{pmatrix}
+	\frac{\du_1\du_2}{1+\exp(-a+u_1^2+u_2^2)}
+\]
+\[
+=
+\iint_{(0,+\infty)\times[0,2\pi)}\begin{pmatrix}
+		\frac{1}{\sqrt{b_1b_2}}\\
+		\frac{1}{b_1\sqrt{b_1b_2}}r^2\cos^2\varphi\\
+		\frac{1}{b_2\sqrt{b_1b_2}}r^2\sin^2\varphi
+	\end{pmatrix}
+	\frac{r\,\mathrm dr\,\mathrm d\varphi}{1+\exp(-a+r^2)}
+\]
+\[
+=
+\int_{0}^{+\infty}\begin{pmatrix}
+		\frac{2\pi r}{\sqrt{b_1b_2}}\\
+		\frac{\pi}{b_1\sqrt{b_1b_2}}r^3\\
+		\frac{\pi}{b_2\sqrt{b_1b_2}}r^3
+	\end{pmatrix}
+	\frac{\mathrm dr}{1+\exp(-a+r^2)}
+\]
+\[
+=
+\int_{0}^{+\infty}\begin{pmatrix}
+		\frac{\pi }{\sqrt{b_1b_2}}\\
+		\frac{\pi}{2b_1\sqrt{b_1b_2}}w\\
+		\frac{\pi}{2b_2\sqrt{b_1b_2}}w
+	\end{pmatrix}
+	\frac{\mathrm dw}{1+\exp(-a+w)}
+\]
+\[
+=
+\begin{pmatrix}
+		\frac{\pi }{\sqrt{b_1b_2}}\Gamma(1)\F_1(a)\\
+		\frac{\pi}{2b_1\sqrt{b_1b_2}}\Gamma(2)\F_2(a)\\
+		\frac{\pi}{2b_2\sqrt{b_1b_2}}\Gamma(2)\F_2(a)
+	\end{pmatrix}
+=
+\begin{pmatrix}
+		\frac{\pi }{\sqrt{b_1b_2}}\F_1(a)\\
+		\frac{\pi}{2b_1\sqrt{b_1b_2}}\F_2(a)\\
+		\frac{\pi}{2b_2\sqrt{b_1b_2}}\F_2(a)
+	\end{pmatrix}.
+\]
+This chain of equalities imply that
+\[
+	\sqrt{2/\pi}\frac{\mu_0}{\sqrt[4]{\mu_{20}\mu_{02}}} = \frac{\F_1(a)}{\F_2^{1/2}(a)} = 2\frac{\mathrm d}{\mathrm da}\G_{2}(a),
+\]
+and the latter function is strictly increasing (cf. our other results).
+This equality gives us, on the one hand, the sufficient condition on $\mu_{\alpha}$ to be an image of our map, and on the other hand it gives the value of $a$ implicitly.
+After that we can obtain $b_i$ by a simple algebraic transformation.
+
+I imagine that we can exploit a similar approach in order to get a glimpse on what happens when we have a generic positive definite matrix $B = \begin{pmatrix}
+	b_{11}&b_{12}\\b_{12}&b_{22}
+\end{pmatrix}$.
+
+ The measure will be $\frac{1}{1+\exp(a+b_{11}x_1^2+2b_{12}x_1x_2+b_{22}x_2^2)}$ with the condition that the matrix  is positive definite. The test functions will be $1$, $x_1^2$, $x_{2}^2$, and $x_1x_2$.
+
+ \textbf{remark from previous days:} The quadratic form $x^TBx$, since it is positive definite, defines an ellipse with major axes, say, $0<\sigma_1\le\sigma_2$, and rotation angle $\theta$. These parameters can be expressed in terms of $b_{ij}$. If, by some miracle, $\sigma_1=\sigma_2$, then we might be able to use the same technique as in the lemma \ref{le:basic}. If $\sigma_1<\sigma_2$, then that technique definitely does not work.
+
+The measure is (after a rotation by an angle $\theta$) 
+\[
+	\frac{1}{1+\exp(a+\sigma_1y_1^2+\sigma_2y_2^2)}.
+\]
+The rotations are
+\begin{align*}
+	y_1 &=  x_1\cos \theta-x_2\sin\theta\\
+	y_2&= x_1\sin\theta+x_2\cos\theta
+	%\label{}
+\end{align*}
+or
+\begin{align*}
+	x_1 &=  y_1\cos \theta+y_2\sin\theta\\
+	x_2&= y_1\sin\theta-y_2\cos\theta
+	%\label{}
+\end{align*}
+
+
+The test functions are, therefore,
+\[
+1,\quad  y_1^2\cos^2\theta+y_1y_2\sin 2\theta+y_2^2\sin^2\theta,\]\[  y_1^2\sin^2\theta-y_1y_2\sin 2\theta+y_2^2\cos^2\theta, \quad \frac{1}{2}(y_1^2-y_2^2)\sin2\theta+y_1y_2\cos2\theta
+\]
+
+This being said, we obtain the following chain of identities:
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}\\
+		\mu_{11}
+	\end{pmatrix}
+	=
+	\int_{\mbo\times\mbo}^{}\begin{pmatrix}
+		\frac{1}{\sqrt{\sigma_1\sigma_2}}\\
+		\frac{y_1^2\cos^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{y_1y_2\sin 2\theta}{\sigma_1\sigma_2}+\frac{y_2^2\sin^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{y_1^2\sin^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}-\frac{y_1y_2\sin 2\theta}{\sigma_1\sigma_2}+\frac{y_2^2\cos^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{y_1^2\sin2\theta}{2\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{y_1y_2\cos 2\theta}{\sigma_1\sigma_2}-\frac{y_2^2\sin2\theta}{2\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+	\end{pmatrix}
+	\frac{\dy_1\dy_2}{1+\exp(-a+y_1^2+y_2^2)}
+\]
+After passing to polar coordinates we obtain
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}\\
+		\mu_{11}
+	\end{pmatrix}
+	=
+	\int_{\mbo\times\mbo}^{}\begin{pmatrix}
+		\frac{1}{\sqrt{\sigma_1\sigma_2}}\\
+	\frac{r^2\cos^2\varphi\cos^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{r^2\sin2\varphi\sin 2\theta}{2\sigma_1\sigma_2}+\frac{r^2\sin^2\varphi\sin^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{r^2\cos^2\varphi\sin^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}-\frac{r^2\sin2\varphi\sin 2\theta}{2\sigma_1\sigma_2}+\frac{r^2\sin^2\varphi\cos^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{r^2\cos^2\varphi\sin2\theta}{2\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{r^2\sin2\varphi\cos 2\theta}{2\sigma_1\sigma_2}-\frac{r^2\sin^2\varphi\sin2\theta}{2\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+	\end{pmatrix}
+	\frac{r\,\mathrm dr\,\mathrm d \varphi}{1+\exp(-a+r^2)},
+\]
+Which, upon integration with respect to $\varphi$ simplifies to
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}\\
+		\mu_{11}
+	\end{pmatrix}
+	=\pi
+	\int_{0}^{+\infty}\begin{pmatrix}
+		\frac{2}{\sqrt{\sigma_1\sigma_2}}\\
+	\frac{r^2\cos^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{r^2\sin^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{r^2\sin^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{r^2\cos^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+		\frac{r^2\sin2\theta}{2\sigma_1\sqrt{\sigma_1\sigma_2}}-\frac{r^2\sin2\theta}{2\sigma_2\sqrt{\sigma_1\sigma_2}}\\
+	\end{pmatrix}
+	\frac{r\,\mathrm dr}{1+\exp(-a+r^2)},
+\]
+and in its turn it becomes
+\[
+	\begin{pmatrix}
+		\mu_0\\
+		\mu_{20}\\
+		\mu_{02}\\
+		\mu_{11}
+	\end{pmatrix}
+	=\frac{\pi}{2}
+	\begin{pmatrix}
+		\frac{2\F_1(a)}{\sqrt{\sigma_1\sigma_2}}\\
+	\left(\frac{\cos^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{\sin^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\right)\F_2(a)\\
+		\left(\frac{\sin^2\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}+\frac{\cos^2\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\right)\F_2(a)\\
+		\left(\frac{\sin\theta\cos\theta}{\sigma_1\sqrt{\sigma_1\sigma_2}}-\frac{\sin\theta\cos\theta}{\sigma_2\sqrt{\sigma_1\sigma_2}}\right)\F_2(a)\\
+	\end{pmatrix}
+\]
+\textbf{remark:} if somehow $\sigma_1=\sigma_2$, then immediately $\mu_{11}=0$ and $\mu_{20}=\mu_{02}$.
+
+Let us try this one:
+
+\[
+	\frac{2\sqrt{\sigma_1\sigma_2}}{\pi\F_2(a)}\left(\mu_{02}+\mu_{20} + 2\mu_{11}   \right)= \frac{\cos^2\theta}{\sigma_1}+\frac{\sin^2\theta}{\sigma_2}+\frac{\cos^2\theta}{\sigma_2}+\frac{\sin^2\theta}{\sigma_1}+\frac{2\sin\theta\cos\theta}{\sigma_1}-\frac{2\sin\theta\cos\theta}{\sigma_2}
+\]
+\[
+	=\frac{(\cos\theta+\sin\theta)^2}{\sigma_1}+\frac{(\cos\theta-\sin\theta)^2}{\sigma_2}.
+\]
+Similarly
+\[
+	\frac{2\sqrt{\sigma_1\sigma_2}}{\pi\F_2(a)}\left(\mu_{02}+\mu_{20} - 2\mu_{11}   \right)= \frac{\cos^2\theta}{\sigma_1}+\frac{\sin^2\theta}{\sigma_2}+\frac{\cos^2\theta}{\sigma_2}+\frac{\sin^2\theta}{\sigma_1}-\frac{2\sin\theta\cos\theta}{\sigma_1}+\frac{2\sin\theta\cos\theta}{\sigma_2}
+\]
+\[
+	=\frac{(\cos\theta-\sin\theta)^2}{\sigma_1}+\frac{(\cos\theta+\sin\theta)^2}{\sigma_2}.
+\]
+Of course, we have
+\[
+	\frac{2\sqrt{\sigma_1\sigma_2}}{\pi\F_2(a)}\left(\mu_{02}+\mu_{20}    \right)=\frac{1}{\sigma_1}+\frac{1}{\sigma_2}
+\]
+and
+\[
+	\frac{2\sqrt{\sigma_1\sigma_2}}{\pi\F_2(a)}\left(\mu_{02}-\mu_{20}    \right)=\cos2\theta\left(\frac{1}{\sigma_1}-\frac{1}{\sigma_2}\right),
+\]
+\[
+	\frac{2\sqrt{\sigma_1\sigma_2}}{\pi\F_2(a)}\mu_{11}=\frac{1}{2}\sin2\theta\left(\frac{1}{\sigma_1}-\frac{1}{\sigma_2}\right).
+\]
+
+\textbf{NB!} $\theta\in(-\pi/4,\pi/4]$.
+
+Here we have several cases
+\begin{enumerate}
+	\item $\mu_{11}=0$, $\mu_{02}\ne \mu_{20}$. This implies that $\theta=0$ and therefore $b_{12}=0$; we can use the previous approach.
+	\item $\mu_{11}=\mu_{02}-\mu_{20}=0$. In this case necessarily $\sigma_1=\sigma_2$, hence $\theta$ is undetermined and by our choice we put $\theta=0$ and use the previous approach.
+	\item $\mu_{11}\ne0$, $\mu_{02}=\mu_{20}$. Here necessarily $\theta=\pi/4$. we can now say that\dots
+	\item $\mu_{11}\ne0$, $\mu_{02}\ne\mu_{20}$. We can say that
+		\[
+			\tan (2\theta)=\frac{2\mu_{11}}{\mu_{02}-\mu_{20}}
+		\]
+		or
+		\[
+			\theta=\frac 12 \arctan\left( \frac{2\mu_{11}}{\mu_{02}-\mu_{20}} \right).
+		\]
+		Also,
+		\[
+			\cos (2	\theta)=\frac{1}{\sqrt{1+\tan^2(2\theta)}}=\frac{|\mu_{02}-\mu_{20}|}{\sqrt{(\mu_{02}-\mu_{20})^2+4\mu_{11}^2}},
+		\]
+		\[
+			\sin(2\theta)=\frac{2|\mu_{11}|}{\sqrt{(\mu_{02}-\mu_{20})^2+4\mu_{11}^2}}\sgn\left( \frac{\mu_{11}}{\mu_{02}-\mu_{20}} \right),
+		\]<++>
+		\[
+			\cos\theta = \sqrt{\frac{1+\cos(2\theta)}{2}}=
+		\]<++>
+\end{enumerate}<++>
+\textbf{Sidestep: }
+\begin{lemma}
+	Let $A\in M_d(\mbo)$, $A=A^*>0$, $B=A^{-1}$, then
+	\[
+		\int_{\mrd}^{}x_px_q\exp\left(-\frac 12(Ax,x)\right)\dx=(2\pi)^{d/2}\sqrt{\det(A)}B_{pq}.
+	\]
+	\label{le:cross:classic}
+\end{lemma}
+\begin{proof}
+	We can show this result with the help of the Fourier transform:
+	\[
+		\int_{\mrd}^{}x_px_q\exp\left(-\frac{1}{2}(Ax,x)\right)\dx=
+		\left.-(2\pi)^{d/2}\sqrt{\det(A)}\partial_{\xi_p}\partial_{\xi_q} \exp\left(-\frac 12(B\xi,\xi)\right)\right|_{\xi=0}
+	\]
+	\[
+		=\left.(2\pi)^{d/2}\sqrt{\det(A)}\partial_{\xi_p}\left(  \exp\left(-\frac 12(B\xi,\xi)\right)\sum_{j}B_{qj}\xi_j\right)\right|_{\xi=0}
+	\]
+\[
+		=\left.(2\pi)^{d/2}\sqrt{\det(A)}\left(  \exp\left(-\frac 12(B\xi,\xi)\right)B_{qp}-\exp\left(-\frac 12(B\xi,\xi)\right)\left( \sum_{j}B_{pj}\xi_j \right)\left( \sum_{j}B_{qj}\xi_j \right)\right)\right|_{\xi=0}
+\]
+\[
+	=(2\pi)^{d/2}\sqrt{\det(A)}B_{qp},
+\]
+which yields the necessary result.
+\end{proof}
+\textbf{Generalisation:} I hope for a generalised version of this lemma, something along the lines
+\begin{lemma}
+	Let $A\in M_d(\mbo)$, $A=A^*>0$ and suppose that $f:[0,+\infty)\to [0,+\infty)$ is a smooth, rapidly decaying function. Suppose also that
+	\[
+		\int_{\mrd}^{}x_1x_2f((Ax,x))\dx=0,
+	\]
+	then $ (A^{-1})_{12}=0$.
+	\label{le:cross:hypothesis}
+\end{lemma}
+Or at least for the case $f_a(r)=\frac{1}{1+\exp(r-a)}$.
+Coarea (from wiki):
+\[
+\int_\Omega g(x) |\nabla u(x)|\, dx = \int_{-\infty}^\infty \left(\int_{u^{-1}(t)}g(x)\,dH_{n-1}(x)\right)\,dt
+\]
+Whose modulus of gradient is the function $f$?
+
+We know that there exist an orthogonal matrix $R$ and positive diagonal matrix $D$ such that
+\[
+	R^*D^*ADR=I,
+\]
+we make a change of variables $x=RDy$, $\dx=\det(D)\dy$, and the test matrix $T=\frac 12(e_{12}+e_{21})$ becomes
+\[
+	R^*D^*TDR = \frac 12 d_1d_2 D^*R^* T RD,
+\]
+thus 
+\[
+	\int_{\mrd}(TRDy,RDy)f(|y|^2)\dy=0.
+\]
+Let $F$ be smooth such that $|\nabla_y F(|y|)|=f(|y|^2)$ (\textit{does it exist?}), then
+\[
+	\int_{0}^{+\infty}\dt\left( \int_{F^{-1}(t)}(TRDy,RDy)\,\mathrm d H_{d-1}(y) \right)=0.
+\]
+Level sets of $F$ are spheres; we can therefore say that
+\[
+	\int_{0}^{+\infty}t^{d+1}\chi_{t\in im(F)}\left( \int_{|y|=1}(TRDy,RDy)\,\mathrm d H_{d-1}(y) \right)\dt=0.
+\]
+In its turn this implies that
+\[
+	\int_{|y|=1}(TRDy,RDy)\,\mathrm d H_{d-1}(y)=0.
+\]
+What can pull from it? Virtually nothing, to be honest.
+
+We have a symmetric matrix $P$ with eigenvalues $0$ (algebraic multiplicity $d-2$) and two other eigenvalues such that
+\[
+	\int_{\msd}(Px,x)\dx=0.
+\]
+Is there anything we can tell about it? We do! Its other eigenvalues are $\pm\lambda $, and nothing beyond that.
+
+\textbf{After sidestep}
+
+This lemma will give us a way out for fully-generated matrices:
+\[
+	M_2=\int_{\mrd}^{}xx^T\exp\left( a-\frac{1}{2}(Ax,x) \right)\dx = e^a(2\pi)^{d/2}\sqrt{\det(A)}A^{-1},
+\]
+\[
+	\mu_0=\int_{\mrd}\exp\left(a -\frac{1}{2}(Ax,x) \right)\dx =e^a (2\pi)^{d/2}\sqrt{\det(A)},
+\]
+hence
+\[
+	\left(  \frac{1}{\mu_0}M_2\right)^{-1}=A, \quad a = \ln\left( \frac{\mu_0}{(2\pi)^{d/2}\sqrt{\det(A)}} \right).
+\]
+
+\begin{lemma}
+	Let $f:(0,+\infty)\to(0,+\infty) $ and $A\in M_d(\mbo)$, $A=A^T>0$ such that
+	\[
+		\int_{0}^{\infty}(1+r^2)r^{d-1}f(r^2)\dr<+\infty,
+	\]
+	then
+	\[
+		\int_{\mrd}xx^Tf(x^TAx)\dx = \frac{|\msd|}{d\sqrt {\det(A)}} \int_{0}^{\infty}r^{d-1}f(r^2)\dr  ,
+	\]
+	\[
+		\int_{\mrd}f(x^TAx)\dx = \frac{|\msd|}{\sqrt {\det(A)}}  \int_{0}^{\infty}r^{d+1}f(r^2)\dr A^{-1}.
+	\]
+\end{lemma}
+\begin{proof}
+A simple change of variables $y=A^{1/2}x$ is sufficient:
+\[
+	x=A^{-1/2}y,\quad \dx =\frac{1}{\sqrt {\det(A)}}\dy,
+\]
+hence
+	\[
+		\int_{\mrd}f(x^TAx)\dx 
+		=\frac{1}{\sqrt {\det(A)}}\int_{\mrd}f(y^T y)\dy
+		=\frac{|\msd|}{\sqrt {\det(A)}}\int_{\mrd}r^{d-1}f(r^2)\dr
+	\]
+and
+\[
+	\int_{\mrd}x x^Tf(x^TAx)\dx  
+	=\frac{1}{\sqrt {\det(A)}} \int_{\mrd}A^{-1/2}yy^TA^{-1/2}f(y^T y)\dy
+\]
+\[
+	=\frac{|\msd|}{d\sqrt {\det(A)}} A^{-1/2} \int_{0}^{+\infty}r^{d+1} I f(r^2)\dr A^{-1/2}
+\]
+\[
+	=\frac{|\msd|}{d\sqrt {\det(A)}}\int_{0}^{+\infty}r^{d+1}   f(r^2)\dr  A^{-1}  .
+\]
+\end{proof}
+
+
+\input{vbokvel.tex}
+\end{document}

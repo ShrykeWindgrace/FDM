@@ -1,0 +1,196 @@
+
+The problem we consider has the following formulation. Let
+
+\[
+    H = \begin{pmatrix}
+        aI&bI-B\\bI+B&cI
+    \end{pmatrix}
+\]
+with the condition that $H=H^T>0$. This condition is equivalent to the following identities:
+
+\[
+    a>0,\quad c>0,\quad B=-B^T,\quad Q=(ac-b^2)I+B^2=Q^T>0.
+\]
+Let the matrix $B=-B^T = \begin{pmatrix}
+    0& -\gamma&  \beta\\
+     \gamma&0&+\alpha\\
+    -\beta& \alpha&0
+\end{pmatrix}$, $\omega = (\alpha,\beta,\gamma)^T$.
+Then we have
+\[
+    B^2
+    =\omega \omega^T-|\omega|^2I
+    = \begin{pmatrix}
+    -\beta^2- \gamma^2& \alpha \beta& \alpha \gamma\\
+    \alpha \beta& -\alpha^2- \gamma^2&\beta\gamma\\
+    \alpha \gamma&\beta\gamma& -\alpha^2- \beta^2
+    \end{pmatrix},
+\]
+eigenvalues of $B$ are $0$  and $\pm i|\omega|$. %with eigenvectors $\omega$  with eigenvectors
+% \[find'em!\]
+In these notations the matrix $Q$ becomes
+\[
+    Q=(ac-b^2-|\omega|^2)I+\omega \omega^T ,
+\]
+its eigenvalues are 
+\[
+    ac-b^2,\quad ac-b^2-|\omega|^2,\quad ac-b^2-|\omega|^2.
+\]
+Hence,
+\[
+    \det H =\det Q
+    =(ac-b^2)(ac-b^2-|\omega|^2)^2.
+\]
+Also,
+\[
+    H^{-1}=\begin{pmatrix}
+        cQ^{-1}&-(bI-B)Q^{-1}\\-(bI+B)Q^{-1}&aQ^{-1} .
+    \end{pmatrix}
+\]
+
+
+We have the  following test values:
+
+\[
+    |x|^2\mapsto  \mu_c=\frac{c\tr (Q^{-1}) }{ \sqrt {\det(Q)}},
+\]
+\[
+    |v|^2\mapsto  \mu_a = \frac{a\tr (Q^{-1}) }{ \sqrt {\det(Q)}},
+\]
+\[
+    x\cdot v\mapsto  \mu_b=\frac{ \tr (-(bI+B)Q^{-1}) }{ \sqrt {\det(Q)}},
+\]
+\[
+    x_2 v_3 - x_3 v_2\mapsto \mu_{\alpha} =\frac{   (-(bI+B)Q^{-1})_{23} -(-(bI+B)Q^{-1})_{32}  }{ \sqrt {\det(Q)}},
+\]
+\[
+    x_3 v_1 - x_1 v_3\mapsto \mu_{\beta} =\frac{   (-(bI+B)Q^{-1})_{31} -(-(bI+B)Q^{-1})_{13}  }{ \sqrt {\det(Q)}},
+\]
+\[
+    x_1 v_2 - x_2 v_1\mapsto \mu_{\gamma} =\frac{   (-(bI+B)Q^{-1})_{12} -(-(bI+B)Q^{-1})_{21}  }{ \sqrt {\det(Q)}}.
+\]
+
+First, we find the inverse of $Q$:
+\[
+    Q^{-1}=\frac{1}{ac-b^2-|\omega|^2}\left( I -\frac{1}{ac-b^2}\omega \omega^T \right),
+\]
+which leads instantly to
+\[
+    \tr(Q^{-1}) = \frac{1}{ac-b^2-|\omega|^2}\left(3-\frac{|\omega|^2}{ac-b^2}\right).
+\]
+In other words,
+\[
+    \mu_a =   \frac{ a\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}},
+\]
+\[
+    \mu_c =  \frac{ c\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}},
+\]
+Next, since $B \omega =0$ and, of course, $B \omega \omega^T=0$, we can say that
+\[
+    (bI+B)Q^{-1} 
+    =\frac{1}{ac-b^2-|\omega|^2} (bI+B) \left( I -\frac{1}{ac-b^2}\omega \omega^T \right)
+\]
+\[
+    =\frac{1}{ac-b^2-|\omega|^2} \left( bI+B - \frac{b}{ac-b^2}\omega \omega^T \right),
+\]
+therefore
+\[
+    \tr (-(bI+B)Q^{-1}) 
+    = -\tr \left( \frac{1}{ac-b^2-|\omega|^2} \left( bI+B - \frac{b}{ac-b^2}\omega \omega^T \right)\right)
+\]
+\[ 
+    = \frac{1}{ac-b^2-|\omega|^2} \left( 3b   - \frac{b|\omega|^2}{ac-b^2}  \right)
+\]
+and hence
+\[
+    \mu_b = \frac{ b\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}.
+\]
+Moreover, we can write
+\[
+    (-(bI+B)Q^{-1})_{12} -(-(bI+B)Q^{-1})_{21} 
+\]
+\[
+    = - \frac{1}{ac-b^2-|\omega|^2} \left(  \left(  bI+B - \frac{b}{ac-b^2}\omega \omega^T \right)_{12} -\left(  bI+B - \frac{b}{ac-b^2}\omega \omega^T \right)_{21}   \right)
+\]
+\[
+    =- \frac{1}{ac-b^2-|\omega|^2} \left(  B _{12} -  B_{21}   \right)
+    = \frac{2 \gamma}{ac-b^2-|\omega|^2},
+\]
+which implies that
+\[
+    \mu_{\gamma} =  \frac{2 \gamma}{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}.
+\]
+
+For the simplicity of notations we will use the following vectors:
+\[
+    p = \begin{pmatrix}
+        a\\b\\c
+    \end{pmatrix},
+    \quad
+    l = \begin{pmatrix}
+        \mu_a\\\mu_b\\\mu_c
+    \end{pmatrix},
+    \quad 
+    g = \begin{pmatrix}
+        \mu_{\alpha}\\\mu_{\beta}\\\mu_{\gamma}
+    \end{pmatrix}.
+\]
+These vectors allow us to rewrite the above identities as
+\[
+    l = \frac{  \left(3-\frac{|\omega|^2}{ac-b^2}\right)}
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}p,
+\]
+\[
+    g =  \frac{2 }{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}\omega.
+\]
+Let also $D_p=ac-b^2>|\omega|^2$, our identities become
+\[
+    l = \frac{  \left(3-\frac{|\omega|^2}{D_p}\right)}{(D_p-|\omega|^2)^2\sqrt { D_p}}p,
+\]
+\[
+    g =  \frac{2 }{(D_p-|\omega|^2)^2\sqrt { D_p}}\omega.
+\]
+Let also 
+\[
+    D_l = \mu_a \mu_c- \mu_b^2,
+\]
+\[
+    r = \frac{|\omega|^2}{D_p},\quad  r\in[0,1) .
+\]
+With these definitions we can say that
+\[
+    l = \frac{ (3-r )}{D_p^{5/2}(1-r)^2}p,
+    \quad g = \frac{2 }{D_p^{5/2}(1-r)^2}\omega.
+\]
+This leads to
+\[
+    D_l = \left( \frac{ (3-r )} {D_p^{5/2}(1-r)^2}\right)^2 D_p = 
+       \frac{ (3-r )^2} {D_p^{4}(1-r)^4}, 
+\]
+\[
+    |g|^2 = \frac{4 }{D_p^{5 }(1-r)^4}|\omega|^2 =
+    \frac{4 }{D_p^{4 }(1-r)^4}r,
+\]
+therefore,
+\[
+    \frac{|g|^2}{D_l}=\frac{4r}{(3-r )^2}.
+\]
+The map $r\to\frac{4r}{(3-r )^2} $ is strictly increasing and continuous on $[0,1)$ (with values in $[0,1)$), hence the condition $ \frac{|g|^2}{D_l}\in[0,1)$. If $z$ stands for $\frac{|g|^2}{D_l}$, then the inverse map writes
+\[
+    r(z)=3 - \frac{6}{1+\sqrt{1+3z}}.
+\]
+Afterwards, it becomes easy to deduce that
+\[
+    D_p = \frac{\sqrt{3-r}}{(1-r)\sqrt[4]{D_l}},
+\]
+and, finally,
+\[
+    p = \frac{D_p^{5/2}(1-r)^2}{ (3-r )}l,
+\]
+
+\[
+    \omega = \frac{D_p^{5/2}(1-r)^2}{2 }g.
+\]
