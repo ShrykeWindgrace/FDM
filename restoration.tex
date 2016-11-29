@@ -219,3 +219,21 @@ or
 \]
 This is the origin % of fire =)
 of the powers that we encountered. 
+
+Other powers come from the integral representation of $f_0$ and $f_2$. We can write them (up to a constant mutliplier depending only on $d$) as
+
+\begin{equation*}
+        f_0(a) = \int_{0}^{+\infty} \bar f(r^2-a)r^{d-1}\dr, \quad f_2(a) = \int_{0}^{+\infty} \bar f(r^2-a)r^{d+1}\dr,
+\end{equation*}
+hence
+\begin{equation*}
+        \der{a} f_2(a) = -\int_{0}^{+\infty} \bar f'(r^2-a)r^{d+1}\dr = -\int_{0}^{+\infty}\frac{1}{2} \der{r} f(r^2-a)r^{d}\dr =  
+\end{equation*}
+\begin{equation*}
+        =-\frac 12 \bar f(r^2-a)r^{d+1}\big|_0^{+\infty} + \frac d2 \int_{0}^{+\infty}f(r^2-a)r^{d-1}\dr = \frac d2 f_0(a).
+\end{equation*}
+This gives us the relation
+\begin{equation*}
+        \frac{f_0(a)}{f_2^{\frac{d}{d+2}}(a)} =  \frac{d+2}{2}\der{a} \left( f_2^{\frac{2}{d+2}}(a) \right)
+\end{equation*}
+
