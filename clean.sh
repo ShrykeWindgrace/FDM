@@ -1,0 +1,1 @@
+rm -f *.aux && rm -f *.fls && rm -f *.log && rm -f *.out && rm -f *.fdb* && rm -rf out && rm -rf tmp
