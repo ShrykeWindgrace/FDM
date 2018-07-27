@@ -13,7 +13,7 @@ with the condition that $H=H^T>0$. This condition is equivalent to the following
 \]
 Let the matrix $B=-B^T = \begin{pmatrix}
     0& -\gamma&  \beta\\
-     \gamma&0&+\alpha\\
+     \gamma&0&\alpha\\
     -\beta& \alpha&0
 \end{pmatrix}$, $\omega = (\alpha,\beta,\gamma)^T$.
 Then we have
@@ -52,22 +52,22 @@ Also,
 We have the  following test values:
 
 \[
-    |x|^2\mapsto  \mu_c=\frac{c\tr (Q^{-1}) }{ \sqrt {\det(Q)}},
+    |x|^2\mapsto  \mu_c=\frac{c\tr (Q^{-1}) }{ \sqrt {\det(Q)}}f_2,
 \]
 \[
-    |v|^2\mapsto  \mu_a = \frac{a\tr (Q^{-1}) }{ \sqrt {\det(Q)}},
+    |v|^2\mapsto  \mu_a = \frac{a\tr (Q^{-1}) }{ \sqrt {\det(Q)}}f_2,
 \]
 \[
-    x\cdot v\mapsto  \mu_b=\frac{ \tr (-(bI+B)Q^{-1}) }{ \sqrt {\det(Q)}},
+    x\cdot v\mapsto  \mu_b=\frac{ \tr (-(bI+B)Q^{-1}) }{ \sqrt {\det(Q)}}f_2,
 \]
 \[
-    x_2 v_3 - x_3 v_2\mapsto \mu_{\alpha} =\frac{   (-(bI+B)Q^{-1})_{23} -(-(bI+B)Q^{-1})_{32}  }{ \sqrt {\det(Q)}},
+    x_2 v_3 - x_3 v_2\mapsto \mu_{\alpha} =\frac{   (-(bI+B)Q^{-1})_{23} -(-(bI+B)Q^{-1})_{32}  }{ \sqrt {\det(Q)}}f_2,
 \]
 \[
-    x_3 v_1 - x_1 v_3\mapsto \mu_{\beta} =\frac{   (-(bI+B)Q^{-1})_{31} -(-(bI+B)Q^{-1})_{13}  }{ \sqrt {\det(Q)}},
+    x_3 v_1 - x_1 v_3\mapsto \mu_{\beta} =\frac{   (-(bI+B)Q^{-1})_{31} -(-(bI+B)Q^{-1})_{13}  }{ \sqrt {\det(Q)}}f_2,
 \]
 \[
-    x_1 v_2 - x_2 v_1\mapsto \mu_{\gamma} =\frac{   (-(bI+B)Q^{-1})_{12} -(-(bI+B)Q^{-1})_{21}  }{ \sqrt {\det(Q)}}.
+    x_1 v_2 - x_2 v_1\mapsto \mu_{\gamma} =\frac{   (-(bI+B)Q^{-1})_{12} -(-(bI+B)Q^{-1})_{21}  }{ \sqrt {\det(Q)}}f_2.
 \]
 
 First, we find the inverse of $Q$:
@@ -81,11 +81,11 @@ which leads instantly to
 In other words,
 \[
     \mu_a =   \frac{ a\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
-    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}},
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}f_2,
 \]
 \[
     \mu_c =  \frac{ c\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
-    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}},
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}f_2,
 \]
 Next, since $B \omega =0$ and, of course, $B \omega \omega^T=0$, we can say that
 \[
@@ -106,7 +106,7 @@ therefore
 and hence
 \[
     \mu_b = \frac{ b\left(3-\frac{|\omega|^2}{ac-b^2}\right)}
-    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}.
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}f_2.
 \]
 Moreover, we can write
 \[
@@ -121,9 +121,8 @@ Moreover, we can write
 \]
 which implies that
 \[
-    \mu_{\gamma} =  \frac{2 \gamma}{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}.
+    \mu_{\gamma} =  \frac{2 \gamma}{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}f_2.
 \]
-
 For the simplicity of notations we will use the following vectors:
 \[
     p = \begin{pmatrix}
@@ -141,17 +140,17 @@ For the simplicity of notations we will use the following vectors:
 These vectors allow us to rewrite the above identities as
 \[
     l = \frac{  \left(3-\frac{|\omega|^2}{ac-b^2}\right)}
-    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}p,
+    {(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}pf_2,
 \]
 \[
-    g =  \frac{2 }{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}\omega.
+    g =  \frac{2 }{(ac-b^2-|\omega|^2)\sqrt {\det(Q)}}\omega f_2.
 \]
 Let also $D_p=ac-b^2>|\omega|^2$, our identities become
 \[
-    l = \frac{  \left(3-\frac{|\omega|^2}{D_p}\right)}{(D_p-|\omega|^2)^2\sqrt { D_p}}p,
+    l = \frac{  \left(3-\frac{|\omega|^2}{D_p}\right)}{(D_p-|\omega|^2)^2\sqrt { D_p}}p f_2,
 \]
 \[
-    g =  \frac{2 }{(D_p-|\omega|^2)^2\sqrt { D_p}}\omega.
+    g =  \frac{2 }{(D_p-|\omega|^2)^2\sqrt { D_p}}\omega f_2.
 \]
 Let also 
 \[
@@ -162,17 +161,17 @@ Let also
 \]
 With these definitions we can say that
 \[
-    l = \frac{ (3-r )}{D_p^{5/2}(1-r)^2}p,
-    \quad g = \frac{2 }{D_p^{5/2}(1-r)^2}\omega.
+    l = \frac{ (3-r )}{D_p^{5/2}(1-r)^2}p f_2,
+    \quad g = \frac{2 }{D_p^{5/2}(1-r)^2}\omega f_2.
 \]
 This leads to
 \[
-    D_l = \left( \frac{ (3-r )} {D_p^{5/2}(1-r)^2}\right)^2 D_p = 
-       \frac{ (3-r )^2} {D_p^{4}(1-r)^4}, 
+    D_l = \left( \frac{ (3-r )} {D_p^{5/2}(1-r)^2}\right)^2 D_p  f_2^2= 
+       \frac{ (3-r )^2} {D_p^{4}(1-r)^4}  f_2^2, 
 \]
 \[
-    |g|^2 = \frac{4 }{D_p^{5 }(1-r)^4}|\omega|^2 =
-    \frac{4 }{D_p^{4 }(1-r)^4}r,
+    |g|^2 = \frac{4 }{D_p^{5 }(1-r)^4}|\omega|^2 f_2^2=
+    \frac{4 }{D_p^{4 }(1-r)^4}r f_2^2,
 \]
 therefore,
 \[
@@ -184,15 +183,15 @@ The map $r\to\frac{4r}{(3-r )^2} $ is strictly increasing and continuous on $[0,
 \]
 Afterwards, it becomes easy to deduce that
 \[
-    D_p = \frac{\sqrt{3-r}}{(1-r)\sqrt[4]{D_l}},
+    D_p = \frac{\sqrt{3-r}}{(1-r)\sqrt[4]{D_l}} \sqrt{f_2},
 \]
 and, finally,
 \[
-    p = \frac{D_p^{5/2}(1-r)^2}{ (3-r )}l,
+    p = \frac{D_p^{5/2}(1-r)^2}{ (3-r )}l\frac{1}{f_2},
 \]
 
 \[
-    \omega = \frac{D_p^{5/2}(1-r)^2}{2 }g.
+    \omega = \frac{D_p^{5/2}(1-r)^2}{2 }g\frac{1}{f_2}.
 \]
 
 
@@ -230,7 +229,7 @@ hence
         \der{a} f_2(a) = -\int_{0}^{+\infty} \bar f'(r^2-a)r^{d+1}\dr = -\int_{0}^{+\infty}\frac{1}{2} \der{r} f(r^2-a)r^{d}\dr =  
 \end{equation*}
 \begin{equation*}
-        =-\frac 12 \bar f(r^2-a)r^{d+1}\big|_0^{+\infty} + \frac d2 \int_{0}^{+\infty}f(r^2-a)r^{d-1}\dr = \frac d2 f_0(a).
+        =-\frac 12 \bar f(r^2-a)r^{d+1}\big|_0^{+\infty} + \frac d2 \int_{0}^{+\infty}f(r^2-a)r^{d-1}\dr = \frac {d}{2} f_0(a).
 \end{equation*}
 This gives us the relation
 \begin{equation*}
