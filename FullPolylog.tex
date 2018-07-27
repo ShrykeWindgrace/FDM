@@ -1,8 +1,12 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts}
 \usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
+\usepackage[
+	hidelinks,
+	pdfauthor={TZ},
+	pdftitle={On the injectivity of polylogarithmic kernels}
+	]{hyperref}
 \input{Code/macro.tex}
 \author{TZ}
 \title{On the injectivity of polylogarithmic kernels}
@@ -71,6 +75,12 @@
 	We can therefore conclude that for this choice of $a_i$ and $b_i$ the corresponding values of $T_f$ are different, and the map $(a,b)\mapsto (T_0,T_f)$ is indeed injective.
 
 \end{proof}
+
+\begin{corollary}
+As a direct corollary of the lemma \ref{le:basic} we see that the map 
+\[(a, b) \to \left( \int_0^\infty \frac{\dx}{1+\exp(a+bx)}, \int_0^\infty \frac{x^2\dx}{1+exp(a+bx)}	\right)\]
+is injective for $(a,b)\in \mro\times (0,+\infty)$.
+\end{corollary}
 %\begin{corollary}
 %	As a direct corollary of the lemma \ref{le:basic} one can establish the injectiveness of the map 
 %	$(\mu,\theta)\mapsto (\rho, \mathcal E)$ which was proven by a by far more complex technique in one of our previous works. That technique works only for $d\ge2$, the lemma \ref{le:basic} works for $d\ge1$. The functions are $f(|x|)=g(|x|)=|x|^2$.
