@@ -1,4 +1,4 @@
 $pdf_mode = 1;
-$out_dir = "out";
+$out_dir = "tmp";
 $aux_dir = "tmp";
-@default_files = ('FullPolylog.tex', 'Main-lev.tex', 'Main.tex');
+$synctex = 1;
