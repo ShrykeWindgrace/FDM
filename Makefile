@@ -3,13 +3,13 @@ default: help
 all: main main-lev polylog
 
 main:
-	latexmk -pdf Main.tex
+	latexmk -pdflatex='pdflatex -synctex=1' -pdf Main.tex
 
 main-lev:
-	latexmk -pdf Main-lev.tex
+	latexmk -pdflatex='pdflatex -synctex=1' -pdf Main-lev.tex
 
 polylog:
-	latexmk -pdf FullPolylog.tex
+	latexmk -pdflatex='pdflatex -synctex=1' -pdf FullPolylog.tex
 clean:
 	latexmk -c
 
