@@ -1,4 +1,4 @@
-default: help
+default: buildNix
 
 all: main main-lev polylog
 
@@ -15,6 +15,16 @@ clean:
 
 clean-all:
 	latexmk -C
+
+buildNix:
+	latexmk -pdf Main.tex
+	latexmk -pdf Main-lev.tex
+	latexmk -pdf FullPolylog.tex
+
+install:
+	cp Main.pdf ${out}
+	cp Main-lev.pdf ${out}
+	cp FullPolylog.pdf ${out}
 
 help:
 	echo "several latex subprojects near my thesis"
