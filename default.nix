@@ -6,5 +6,5 @@ stdenv.mkDerivation rec {
         gnumake
         (texlive.combine { inherit (texlive) scheme-basic latexmk cm-super; })
     ];
-    src = pkgs.lib.sources.sourceFilesBySuffices ./. [".tex" ".pdf" "Makefile" ".png"];
+    src = pkgs.lib.sources.sourceFilesBySuffices ./. [".tex" "Makefile" ".png"];
 }
